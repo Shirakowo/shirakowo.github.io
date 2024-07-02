@@ -21,14 +21,22 @@ a.pl:hover {
   text-decoration: underline;
 }
 
+.x1 {
+  font-weight: 0;
+}
+
+.x2 {
+  font-weight: 1000;
+}
+
 #profile {
   color: white;
 }
 
 #outerframe {
   background-image: linear-gradient(#e00a0a, #520083);
-  margin-left: 256px;
-  margin-right: 256px;
+  margin-left: 30%;
+  margin-right: 30%;
   padding: 4px;
 }
 
@@ -46,10 +54,17 @@ a.pl:hover {
 }
 
 #edit:hover {
-
+  background-color: #8c0009;
 }
 
 @font-face {
   font-family: nvidia;
   src: url("Font.ttf");
+}
+
+@media only screen and (max-width: 1000px) {
+  #outerframe {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
