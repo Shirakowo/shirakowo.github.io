@@ -20,8 +20,17 @@ getDataFromJson(params.cmd).then(data => {
       code += " " + "{" + str + "}";
     }
   }
+
+  var ps;
+  if (data.permission == 0) ps = "Everyone";
+  if (data.permission == 1) ps = "Administrator";
   
   document.getElementById("s0-c").innerHTML = code;
+  document.getElementById("description").innerHTML = "Description: " + data.description;
+  document.getElementById("permission").innerHTML = "Permission: " + ps;
+  document.getElementById("param").innerHTML = "Params: ";
+  document.getElementById("exception").innerHTML = "Exceptions: ";
+
 }).catch(error => {
   if (params.cmd != null) console.error(error);
 });
