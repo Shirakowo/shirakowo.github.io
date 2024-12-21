@@ -1,0 +1,31 @@
+{
+  "osu": {
+    "description": "Get an osu! player profile",
+    "param": {
+      "username": {
+        "description": "The username of the player",
+        "type": "string",
+        "require": true
+      },
+      "mode": {
+        "description": "Rulesets",
+        "type": "number",
+        "enum": {
+          "Standard": 0,
+          "Taiko": 1,
+          "Catch": 2,
+          "Mania": 3
+        },
+        "require": false
+      }
+    },
+    "ex": [
+      "User not found"
+    ],
+    "permission": 0
+  },
+  "env": {
+    "description": "Get the device environment",
+    "permission": 1
+  }
+}
