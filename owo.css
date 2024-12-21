@@ -1,0 +1,42 @@
+:root {
+  --nv-green: #76b900;
+}
+
+body {
+  font-family: nv;
+}
+
+.navbar {
+  background-color: #333;
+  margin-block: 0;
+  display: inline-block;
+  text-align: center;
+  font-size: max(0.75vw, 15px);
+}
+
+.navbar > a {
+  display: inline-block;
+  color:  #fff;
+  padding: 1vh 2vw;
+  text-decoration: none;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.navbar > a.active{
+  background-color: var(--nv-green);
+}
+
+.navbar > a:hover {
+  background-color: #4CAF50;
+}
+
+@font-face {
+  font-family: nv;
+  src: url("Fonts/Nvidia.ttf");
+}
+
+@font-face {
+  font-family: noto;
+  src: url("Fonts/Noto%20Sana%20CJK%20JP%20Medium.ttf");
+}

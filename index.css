@@ -1,0 +1,24 @@
+@import url("owo.css");
+
+.owo-s0-x {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.owo-s0-x:hover {
+  background-color: #f0f0f0;
+}
+
+.owo-s0-x > img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px
+}
+
+.owo-s0-x > span {
+  color: black;
+  font-size: 16px;
+}
