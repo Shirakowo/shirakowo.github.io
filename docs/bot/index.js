@@ -19,11 +19,11 @@ getDataFromJson(params.cmd).then(data => {
         str += "?"
       }
 
-      code += " " + "{" + str + "}";
+      code += " " + "{" + str + ": " + data.param[key].type + "}";
 
       const newElement = document.createElement("li");
       newElement.id = "params-" + key;
-      newElement.innerHTML = "<code>{" + str + "}</code>" + " - " + extractedItems[key].description;
+      newElement.innerHTML = "<code>{" + str + ": " + data.param[key].type +"}</code>" + " - " + extractedItems[key].description;
       document.getElementById("params").appendChild(newElement);
 
       if (extractedItems[key].hasOwnProperty("enum")) {
