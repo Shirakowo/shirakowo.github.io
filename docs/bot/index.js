@@ -8,6 +8,8 @@ getDataFromJson(params.cmd).then(data => {
   const extractedItems = {};
   for (const key in data.param) {
     if (data.param && data.param.hasOwnProperty(key)) {
+      document.getElementById("param").innerHTML = "Params: ";
+
       var str = key;
 
       extractedItems[key] = data.param[key];
@@ -18,7 +20,35 @@ getDataFromJson(params.cmd).then(data => {
       }
 
       code += " " + "{" + str + "}";
+
+      const newElement = document.createElement("li");
+      newElement.id = "params-" + key;
+      newElement.innerHTML = "<code>{" + str + "}</code>" + " - " + extractedItems[key].description;
+      document.getElementById("params").appendChild(newElement);
+
+      if (extractedItems[key].hasOwnProperty("enum")) {
+        const enums = extractedItems[key].enum;
+        const enumLocation = document.createElement("ul");
+        document.getElementById("params").appendChild(enumLocation);
+
+        for (const enumKey in enums) {
+          if (enums.hasOwnProperty(enumKey)) {
+            const enumElement = document.createElement("li");
+            enumElement.innerHTML = `<code>${enumKey}</code>: ${enums[enumKey]}`;
+            enumLocation.appendChild(enumElement);
+          }
+        }
+      }
     }
+  }
+
+  for (const key in data.ex)
+  {
+    document.getElementById("ex").innerHTML = "Exceptions: ";
+    const ex = data.ex[key];
+    const newElement = document.createElement("li");
+    newElement.innerHTML = ex;
+    document.getElementById("exs").appendChild(newElement);
   }
 
   var ps;
@@ -28,8 +58,6 @@ getDataFromJson(params.cmd).then(data => {
   document.getElementById("s0-c").innerHTML = code;
   document.getElementById("description").innerHTML = "Description: " + data.description;
   document.getElementById("permission").innerHTML = "Permission: " + ps;
-  document.getElementById("param").innerHTML = "Params: ";
-  document.getElementById("exception").innerHTML = "Exceptions: ";
 
 }).catch(error => {
   if (params.cmd != null) console.error(error);
