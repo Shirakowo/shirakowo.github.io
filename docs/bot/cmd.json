@@ -1,5 +1,6 @@
 {
   "osu": {
+    "version": "3.0.0",
     "description": "Get an osu! player profile",
     "param": {
       "username": {
@@ -16,16 +17,80 @@
           "Catch": 2,
           "Mania": 3
         },
-        "require": false
+        "require": false,
+        "default": 0
       }
     },
+    "return": [
+      "name",
+      "id",
+      "avatar",
+      "level",
+      "pp",
+      "pp_rank",
+      "pp_country_rank",
+      "country",
+      "rank_score",
+      "total_score",
+      "accuracy",
+      "playcount",
+      "total_hits",
+      "ssh",
+      "ss",
+      "sh",
+      "s",
+      "a"
+    ],
     "ex": [
       "User not found"
     ],
     "permission": 0
   },
   "env": {
+    "version": "3.0.0",
     "description": "Get the device environment",
+    "return": [
+      "shirako_v2_version",
+      "python_version",
+      "system",
+      "runtime",
+      "total_runtime",
+      "document_link"
+    ],
     "permission": 1
+  },
+  "avatar": {
+    "version": "3.0.2",
+    "description": "Get a member avatar",
+    "param": {
+      "user": {
+        "description": "The username of the member",
+        "type": "member",
+        "require": false,
+        "default": "Self"
+      }
+    },
+    "return": [
+      "avatar"
+    ],
+    "permission": 0
+  },
+  "profile": {
+    "version": "3.1.0",
+    "description": "Get user profile",
+    "param": {
+      "username": {
+        "description": "The username of the profile",
+        "type": "member",
+        "require": false,
+        "default": "Self"
+      }
+    },
+    "return": [
+      "avatar",
+      "level",
+      "total_xp"
+    ],
+    "permission": 0
   }
 }
