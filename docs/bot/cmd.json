@@ -92,5 +92,44 @@
       "total_xp"
     ],
     "permission": 0
+  },
+  "timeout": {
+    "version": "3.1.2",
+    "description": "Timeout user",
+    "param": {
+      "username": {
+        "description": "The username of the profile",
+        "type": "member",
+        "require": true
+      },
+      "duration": {
+        "description": "How long did the member timeout for (Unit: seconds)",
+        "type": "number",
+        "require": true
+      },
+      "reason": {
+        "description": "The reason to timeout",
+        "type": "string",
+        "require": false
+      }
+    },
+    "return": [
+      "timeout"
+    ],
+    "ex": [
+      "Invaild value of duration"
+    ],
+    "permission": 1
+  },
+  "leaderboard": {
+    "version": "3.2.0",
+    "description": "Get top 10 XP leaderboard",
+    "return": [
+      "rank",
+      "username",
+      "level",
+      "total_xp"
+    ],
+    "permission": 0
   }
 }
