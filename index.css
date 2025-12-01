@@ -1,0 +1,251 @@
+body {
+  font-family: "Quicksand", sans-serif;
+  --color-dark: #323339;
+  --color-black: #070709;
+  background-color: var(--color-dark);
+}
+
+.card {
+  --accent: #5865f2;
+  --frame-thickness: 4px;
+  margin: 40px auto;
+  max-width: 720px;
+  border-radius: 14px;
+  padding: var(--frame-thickness);
+  background: linear-gradient(#ff3b3b, #5A096E);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+  color: #e6e6e6;
+  
+}
+
+.card.nitro {
+  --accent: linear-gradient(90deg, #ff6af5, #5865f2, #00e5ff);
+}
+
+.card-body {
+  border-radius: calc(14px - var(--frame-thickness));
+  overflow: hidden;
+  background: linear-gradient(180deg, #f30a0a 0%, #5A096E 100%);
+}
+
+.inner {
+  padding: 18px 18px 20px 18px;
+  background: linear-gradient(rgba(11, 12, 14, 0.12), rgba(11, 12, 14, 0.06));
+}
+
+.header-image {
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+}
+
+.header-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center;
+}
+
+.header-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.45));
+  pointer-events: none;
+}
+
+/* Profile layout */
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -46px;
+  flex: 0 0 92px;
+  display: inline-grid;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.25));
+  padding: 4px; /* ring thickness */
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
+/* Nitro animated ring */
+.card.nitro .avatar {
+  padding: 3px;
+  background: conic-gradient(from 0deg, #ff6af5, #5865f2, #00e5ff, #ff6af5);
+  animation: ring-rotate 6s linear infinite;
+}
+
+.card.nitro .avatar img {
+  border-radius: 50%;
+}
+
+@keyframes ring-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.name-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.username {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+  color: #e6e6e6;
+}
+
+.card.nitro .username {
+  background: var(--accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tag {
+  color: #b9bbbe;
+  font-weight: 400;
+  font-size: 13px;
+  margin-left: 6px;
+}
+
+.role {
+  color: #b9bbbe;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #e6e6e6;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "Quicksand", sans-serif;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, #5865f2, #4953d6);
+  border: none;
+}
+
+.btn:focus {
+  outline: 2px solid rgba(88, 101, 242, 0.25);
+}
+
+.status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #43b581;
+  display: inline-block;
+  margin-right: 6px;
+  box-shadow: 0 0 8px rgba(67, 181, 129, 0.18);
+}
+
+@media (max-width: 520px) {
+  .card {
+    margin: 20px;
+  }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+    margin-top: -36px;
+  }
+
+  .username {
+    font-size: 16px;
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  min-width: 20px;
+  padding: 0 6px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-left: 8px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.badge.nitro-badge {
+  background: linear-gradient(90deg, #ff6af5, #5865f2);
+  box-shadow: 0 4px 18px rgba(88, 101, 242, 0.14);
+}
+
+.badge {
+  position: relative;
+}
+
+.badge .tooltip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% + 8px);
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 120ms ease-in-out, transform 120ms ease-in-out;
+  pointer-events: none;
+}
+
+.badge .tooltip[aria-hidden="false"] {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+  pointer-events: auto;
+}
+
+.badge .tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  border: 6px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.9);
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("mu3/Quicksand.ttf");
+}
