@@ -16,12 +16,11 @@ function formatDate(iso){
 var badges = document.querySelectorAll('.nitro-badge');
 badges.forEach(function(b) {
     var tooltip = b.querySelector('.tooltip');
-    var start = b.getAttribute('data-nitro-start') || '';
-    var label = start ? ('Nitro since: ' + formatDate(start)) : 'Nitro';
+    var label = ('Nitro since 14 Mar 2025')
     if (tooltip) tooltip.textContent = label;
 
-    var show = function(){ if (tooltip) tooltip.setAttribute('aria-hidden','false'); };
-    var hide = function(){ if (tooltip) tooltip.setAttribute('aria-hidden','true'); };
+    var show = function() { if (tooltip) tooltip.setAttribute('aria-hidden','false'); };
+    var hide = function() { if (tooltip) tooltip.setAttribute('aria-hidden','true'); };
 
     b.addEventListener('mouseenter', show);
     b.addEventListener('mouseleave', hide);
