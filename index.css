@@ -175,7 +175,7 @@ body {
 
 @media (max-width: 520px) {
   .card {
-    margin: 20px;
+    margin: 4px;
   }
 
   .avatar {
@@ -251,7 +251,7 @@ body {
 }
 
 .projects {
-  margin: 20px auto;
+  margin: 4px auto;
   max-width: 720px;
   background: linear-gradient(180deg, rgba(11, 12, 14, 0.125), rgba(11, 12, 14, 0.25));
   border-radius: 14px;
@@ -304,7 +304,7 @@ body {
 }
 
 .connections {
-  margin: 20px auto;
+  margin: 4px auto;
   margin-bottom: 0px;
   max-width: 720px;
   background: linear-gradient(180deg, rgba(11, 12, 14, 0.125), rgba(11, 12, 14, 0.25));
@@ -344,7 +344,7 @@ body {
 }
 
 .about-me {
-  margin: 20px auto;
+  margin: 4px auto;
   max-width: 720px;
   background: linear-gradient(180deg, rgba(11, 12, 14, 0.125), rgba(11, 12, 14, 0.25));
   border-radius: 14px;
